@@ -9,8 +9,8 @@ app.use('/', express.static('public'));
 app.use(express.json());
 
 app.get('/api/data', async (req, res) => {
-  let lat = 47.27;
-  let lon = 47.37;
+  let lat = req.query.lat;
+  let lon = req.query.lon;
   let resData = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}9&lon=${lon}&appid=325f30978fbd6d014691785ced717615&units=metric`
   );
