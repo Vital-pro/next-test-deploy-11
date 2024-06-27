@@ -4,7 +4,7 @@ let lonInput = document.querySelector('#lon');
 let loadBtn = document.querySelector('#load');
 console.log(latInput.value);
 loadBtn.addEventListener('click', () => {
-  fetch(`https://next-test-deploy-11.vercel.app/data`)
+  fetch(`https://next-test-deploy-11.vercel.app/api/data`)
     .then((res) => res.json())
     .then((resJson) => {
       // console.log(resJson);
