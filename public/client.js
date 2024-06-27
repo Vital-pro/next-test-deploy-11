@@ -4,7 +4,7 @@ let lonInput = document.querySelector('#lon');
 let loadBtn = document.querySelector('#load');
 console.log(latInput.value);
 loadBtn.addEventListener('click', () => {
-  fetch(`https://next-test-deploy-11.vercel.app/api/data?lat=${latInput.value}&lon=${lonInput.value}`)
+  fetch(`/api/data?lat=${latInput.value}&lon=${lonInput.value}`)
     .then((res) => res.json())
     .then((resJson) => {
       // console.log(resJson);
@@ -12,3 +12,11 @@ loadBtn.addEventListener('click', () => {
         resJson.city + ' ' + resJson.temperature;
     });
 });
+
+
+// let btnTimeOut = document.querySelector('#timeOut');
+// btnTimeOut.addEventListener('click', () => {
+//   setTimeout(() => {
+//     console.log(2)
+//   }, 5000);
+// })
