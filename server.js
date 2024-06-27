@@ -8,7 +8,7 @@ app.use(cors());
 app.use('/', express.static('public'));
 app.use(express.json());
 
-app.get('/data', async (req, res) => {
+app.get('/api/data', async (req, res) => {
   let lat = req.query.lat;
   let lon = req.query.lon;
   let resData = await fetch(
