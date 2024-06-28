@@ -5,9 +5,7 @@ let loadBtn = document.querySelector('#load');
 console.log(latInput.value);
 loadBtn.addEventListener('click', () => {
   // (fetch`/api/data?lat=${latInput.value}&lon=${lonInput.value}`) //todo так будет работать и в prod, НЕОТНОСительный путь!, если бэк и фронт будут на ОДНОМ хостинге
-  fetch(
-    `https://next-test-deploy-11.vercel.app/api/data?lat=${latInput.value}&lon=${lonInput.value}`
-  )
+  fetch(`https://next-test-deploy-11.vercel.app/api/data?lat=${latInput.value}&lon=${lonInput.value}`)
     // todo такой fetch можно отправить прямо с client-a, ссоответсвтенно, поменяв при этом и данные для отображения
     // todo // resJson.name + ' ' + resJson.main.temp + ' °C';
     // fetch(
