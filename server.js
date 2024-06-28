@@ -12,7 +12,9 @@ app.use(express.json());
 app.get('/api/data', async (req, res) => {
   let lat = req.query.lat;
   let lon = req.query.lon;
-  let resData = await fetch(URLWEATHERPASSWORD);
+  let resData = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}9&lon=${lon}&appid=${process.env.URLWEATHERPASSWORD}&units=metric`
+  );
   let resJson = await resData.json();
   console.log(resJson)
   console.log(resJson.name + ' ' + resJson.main.temp);
