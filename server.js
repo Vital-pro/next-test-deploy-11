@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3333;
@@ -11,9 +12,7 @@ app.use(express.json());
 app.get('/api/data', async (req, res) => {
   let lat = req.query.lat;
   let lon = req.query.lon;
-  let resData = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}9&lon=${lon}&appid=325f30978fbd6d014691785ced717615&units=metric`
-  );
+  let resData = await fetch(URLWEATHERPASSWORD);
   let resJson = await resData.json();
   console.log(resJson)
   console.log(resJson.name + ' ' + resJson.main.temp);
